@@ -6,7 +6,6 @@ phases:
       - npm install
   pre_build:
     commands:
-      - npm install express dotenv 
       - npm install pm2@latest -g
     
   build:
