@@ -24,7 +24,7 @@ pipeline {
          steps {
             withEnv(["AWS_ACCESS_KEY_ID=AKIAYHH3AUCEHT4BJEPP", "AWS_SECRET_ACCESS_KEY=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", "AWS_DEFAULT_REGION=us-east-1"]) {
             echo 'Parse yaml and execute CodeBuild Projects...'
-            sh 'aws codebuild start-build --project-name project-name '
+            sh 'aws codebuild start-build --project-name pranesh-test '
          }
          }
       }
