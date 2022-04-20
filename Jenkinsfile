@@ -11,18 +11,21 @@ pipeline {
 // //       AWS_ACCOUNT = credentials('aws_account')
 //    }
    
-   withEnv(["AWS_ACCESS_KEY_ID=AKIAYHH3AUCEHT4BJEPP", "AWS_SECRET_ACCESS_KEY=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", "AWS_DEFAULT_REGION=us-east-1"]) {
-    AWS("ec2 describe-instances")
-}
+//    {
+//     AWS("ec2 describe-instances")
+// }
 
-AWS("s3 ls")
+// AWS("s3 ls")
    
    stages {      
       
        stage('build --- Execute CodeBuild projects in AWS') {
+          
          steps {
+            withEnv(["AWS_ACCESS_KEY_ID=AKIAYHH3AUCEHT4BJEPP", "AWS_SECRET_ACCESS_KEY=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", "AWS_DEFAULT_REGION=us-east-1"]) {
             echo 'Parse yaml and execute CodeBuild Projects...'
             sh 'aws codebuild start-build --project-name project-name '
+         }
          }
       }
       
