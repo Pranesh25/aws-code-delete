@@ -1,5 +1,6 @@
 #!/bin/bash
 sudo systemctl enable --now --no-block ecs.service
 sudo amazon-linux-extras disable docker
+sudo yum remove docker -y
 sudo amazon-linux-extras install -y ecs;sudo systemctl enable --now ecs
 echo "ECS_CLUSTER=default" >> /etc/ecs/ecs.config
